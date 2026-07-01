@@ -107,7 +107,7 @@ nav a:hover {
 /* --- HERO SECTION --- */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 60px 20px 40px 20px; /* Adjusted to flow better into the products */
     background-color: var(--white);
     display: flex;
     flex-direction: column;
