@@ -184,12 +184,29 @@ nav a:hover {
     transform: translateY(-5px);
 }
 
+/* --- PRODUCT CARDS & PLACEHOLDERS --- */
 .card-img {
     width: 100%;
-    height: 200px;
+    height: 250px; /* A little taller to show off the stickers! */
+    object-fit: cover; /* This stops the squishing! */
+    object-position: center;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 209, 220, 0.4);
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 250px;
     background-color: var(--cream);
     border-radius: 12px;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-family: 'Quicksand', sans-serif;
+    border: 1px dashed var(--soft-pink);
 }
 
 .card h3 {
