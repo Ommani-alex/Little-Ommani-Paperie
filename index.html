@@ -81,7 +81,7 @@
           
           <!-- Product 1: Ghostly Grind Treats -->
           <article class="card">
-            <img src="Ghost_treats.png" alt="Ghostly Grind Treats sticker sheet" class="card-img" />
+            <img src="Ghost_treats.png" alt="Ghostly Grind Treats" class="card-img" style="cursor: pointer;" onclick="openModal('Ghostly Grind Treats', '8.00', 'Ghost_treats.png', 'Sweet little scares for your journal or planner.', 'ghostly-treats-01', 'Seasonal Drop')">
             <div class="product-info">
               <p class="tag">Seasonal Drop</p>
               <h3>Ghostly Grind Treats</h3>
@@ -102,7 +102,7 @@
 
           <!-- Product 2: Barbie x Dunkin -->
           <article class="card">
-            <img src="BarbiexDunkin.png" alt="Barbie x Dunkin sticker sheet" class="card-img" />
+            <img src="BarbiexDunkin.png" alt="Barbie x Dunkin" class="card-img" style="cursor: pointer;" onclick="openModal('Barbie x Dunkin\'', '8.00', 'BarbiexDunkin.png', 'Vibrant pop culture stickers for your everyday life.', 'barbie-dunkin-01', 'Pop Culture')">
             <div class="product-info">
               <p class="tag">Pop Culture</p>
               <h3>Barbie x Dunkin'</h3>
@@ -192,7 +192,27 @@
   <script async src="https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.js"></script>
   <div hidden id="snipcart" data-api-key="ZDgyNDZlNWUtMjFhOC00NmVmLWFjZjYtOGNlZjQyMjVlYmJmNjM5MTg1MjY1OTMzOTIxMzE5
 "></div>
-
+<div class="product-modal" id="productModal" hidden>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <img id="modalImage" src="" alt="Product Details" style="width: 100%; border-radius: 12px; margin-bottom: 15px; border: 1px solid rgba(255, 209, 220, 0.4);">
+      <p class="tag" id="modalTag" style="display: inline-block; margin-bottom: 10px;"></p>
+      <h2 id="modalTitle"></h2>
+      <p class="product-price" style="font-weight: 600; font-size: 1.2rem; margin-bottom: 10px;">$<span id="modalPrice"></span></p>
+      <p id="modalDescription" style="color: var(--text-light); margin-bottom: 25px; line-height: 1.6;"></p>
+      
+      <button class="btn snipcart-add-item" id="modalBuyBtn" style="width: 100%;"
+        data-item-id=""
+        data-item-price=""
+        data-item-url="https://littleommani.com/"
+        data-item-description=""
+        data-item-image=""
+        data-item-name="">
+        Add to cart <span>+</span>
+      </button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
