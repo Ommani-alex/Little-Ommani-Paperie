@@ -1,105 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Ommani Paperie | Whimsical Stickers & Happy Mail</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#b891d5" />
+  <meta name="description" content="Little Ommani Paperie — whimsical stickers, happy mail, and tiny treasures." />
+  <title>Little Ommani Paperie | Whimsical Stickers & Happy Mail</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Snipcart CSS -->
+  <link rel="preconnect" href="https://app.snipcart.com" />
+  <link rel="preconnect" href="https://cdn.snipcart.com" />
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.css" />
 </head>
 <body>
+  <a class="skip-link" href="#shop">Skip to content</a>
 
-    <div class="announcement-bar">
-        ✨ Free shipping on orders over $35 | New Ghostly Grind Treats collection is here! ✨
+  <!-- Announcement Bar -->
+  <div class="announcement" role="status">
+    <span>✦ Free U.S. shipping on orders over $35</span>
+    <span class="announcement-dot">•</span>
+    <span>New: Ghostly Grind Treats collection</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="Little Ommani Paperie home">
+        <span class="brand-mark">✦</span>
+        <span>
+          <strong>Little Ommani</strong>
+          <em>paperie</em>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#shop">Shop</a>
+        <a href="#happy-mail">Happy Mail</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- This button now triggers the Snipcart drawer! -->
+        <button class="cart-button snipcart-checkout" aria-label="Open shopping cart">
+          <span aria-hidden="true">🛍</span>
+          <span>Cart</span>
+          <b class="snipcart-items-count">0</b>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <header>
-        <div class="brand-name">Little Ommani Paperie</div>
-        <nav>
-            <ul>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Sticker Sheets</a></li>
-                <li><a href="#">Happy Mail</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Cart (0)</a></li>
-            </ul>
-        </nav>
-    </header>
-
-<section class="hero">
-        <h1>Cute stickers for cozy little moments.</h1>
-        <p>Collectible sticker sheets, happy mail, and whimsical paper goods.</p>
-        <a href="#shop" class="btn">Shop New Releases</a>
+  <main id="main">
+    <!-- Clean, Image-Free Hero Section -->
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="hero-copy" style="text-align: center; padding: 60px 20px 40px 20px;">
+        <h1 id="hero-title">Cute stickers for cozy little moments.</h1>
+        <p class="hero-text" style="max-width: 600px; margin: 0 auto 20px auto;">Collectible sticker sheets, happy mail, and whimsical paper goods made to brighten journals, planners, and everyday tiny moments.</p>
+        
+        <div class="hero-actions">
+          <a class="btn" href="#shop">Shop new releases</a>
+        </div>
+        
+        <div class="trust-row" aria-label="Shop highlights" style="margin-top: 30px; display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; color: #7A7A7A;">
+          <span>♡ Original artwork</span>
+          <span>✦ Small-batch made</span>
+          <span>☁ Packed with care</span>
+        </div>
+      </div>
     </section>
 
-<section id="shop" class="collections">
-        <h2 class="section-title">New Arrivals</h2>
-        <div class="grid-container">
-            
-            <div class="card">
-                <img src="Ghost_treats.png" alt="Ghostly Grind Treats Sticker Sheet" class="card-img">
-                <h3>Ghostly Grind Treats</h3>
-                <p class="tag">Seasonal Drop</p>
-            </div>
+    <!-- Shop / New Arrivals Section -->
+    <section class="section shop-section" id="shop" aria-labelledby="shop-title">
+      <div class="shell">
+        <div class="section-heading centered">
+          <h2 id="shop-title">New Arrivals</h2>
+        </div>
 
-            <div class="card">
-                <img src="BarbiexDunkin.png" alt="Barbie x Dunkin Sticker Sheet" class="card-img">
-                <h3>Barbie x Dunkin'</h3>
-                <p class="tag">Pop Culture</p>
+        <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+          
+          <!-- Product 1: Ghostly Grind Treats -->
+          <article class="card">
+            <img src="Ghost_treats.png" alt="Ghostly Grind Treats sticker sheet" class="card-img" />
+            <div class="product-info">
+              <p class="tag">Seasonal Drop</p>
+              <h3>Ghostly Grind Treats</h3>
+              <p class="product-price">$8.00</p>
+              
+              <!-- Snipcart Buy Button -->
+              <button class="btn snipcart-add-item"
+                data-item-id="ghostly-treats-01"
+                data-item-price="8.00"
+                data-item-url="/index.html"
+                data-item-description="Sweet little scares for your journal or planner."
+                data-item-image="Ghost_treats.png"
+                data-item-name="Ghostly Grind Treats">
+                Add to cart <span>+</span>
+              </button>
             </div>
+          </article>
 
-            <div class="card">
-                <div class="placeholder-img">Coming Soon!</div>
-                <h3>Ghostly Grind Café</h3>
-                <p class="tag">Everyday Cute</p>
+          <!-- Product 2: Barbie x Dunkin -->
+          <article class="card">
+            <img src="BarbiexDunkin.png" alt="Barbie x Dunkin sticker sheet" class="card-img" />
+            <div class="product-info">
+              <p class="tag">Pop Culture</p>
+              <h3>Barbie x Dunkin'</h3>
+              <p class="product-price">$8.00</p>
+              
+              <!-- Snipcart Buy Button -->
+              <button class="btn snipcart-add-item"
+                data-item-id="barbie-dunkin-01"
+                data-item-price="8.00"
+                data-item-url="/index.html"
+                data-item-description="Vibrant pop culture stickers."
+                data-item-image="BarbiexDunkin.png"
+                data-item-name="Barbie x Dunkin'">
+                Add to cart <span>+</span>
+              </button>
             </div>
+          </article>
+
+          <!-- Product 3: Ghostly Grind Cafe -->
+          <article class="card">
+            <div class="placeholder-img">Coming Soon!</div>
+            <div class="product-info">
+              <p class="tag">Everyday Cute</p>
+              <h3>Ghostly Grind Café</h3>
+              <p class="product-price">$8.00</p>
+              <button class="btn" disabled>Coming Soon</button>
+            </div>
+          </article>
 
         </div>
+      </div>
     </section>
 
-    <section class="split-section">
-        <div class="tiny-treasures">
-            <h2>Tiny Treasures</h2>
-            <p style="margin-top: 10px; color: var(--text-light);">Explore the little details that make happy mail magical.</p>
-            <div class="tag-list">
-                <span class="tag">Sticker flakes</span>
-                <span class="tag">Die-cut stickers</span>
-                <span class="tag">Address labels</span>
-                <span class="tag">Mystery happy mail</span>
-                <span class="tag">Washi samples</span>
-                <span class="tag">Journal cards</span>
-                <span class="tag">Mini sticker packs</span>
-            </div>
+    <!-- FAQ Section (Using your excellent native details/summary tags) -->
+    <section class="section faq-section" id="faq" aria-labelledby="faq-title" style="padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+      <div class="shell">
+        <h2 id="faq-title" style="text-align: center; margin-bottom: 30px;">Shop &amp; shipping FAQ</h2>
+        <div class="faq-list">
+          <details open>
+            <summary>What are the sticker sheets made from?</summary>
+            <p>Most sheets are printed on quality vinyl sticker paper and kiss-cut for easy peeling. Product listings will always include the exact material and size.</p>
+          </details>
+          <details>
+            <summary>How quickly do orders ship?</summary>
+            <p>For a small handmade shop, allow 3 to 7 business days for processing before shipping. Seasonal drops may take a little longer.</p>
+          </details>
+          <details>
+            <summary>Can I send an order as a gift?</summary>
+            <p>Yes. Add a gift note at checkout and keep an eye out for future gift-wrap and happy-mail add-ons.</p>
+          </details>
         </div>
-
-        <div class="about-preview">
-            <h2>Meet the Maker</h2>
-            <p style="margin-top: 15px;">
-                "Little Ommani Paperie is a small stationery shop made for people who love cute things, cozy details, happy mail, and turning everyday moments into something a little more magical."
-            </p>
-            <a href="#" class="btn" style="margin-top: 20px;">Read the Story</a>
-        </div>
+      </div>
     </section>
 
-    <footer>
-        <div class="newsletter">
-            <h3>Join the Snail Mail Club</h3>
-            <p style="margin-bottom: 15px; font-size: 0.9rem;">Sign up for sneaky peeks, shop updates, and tiny surprises.</p>
-            <form>
-                <input type="email" placeholder="Your email address">
-                <button type="submit" class="btn">Subscribe</button>
-            </form>
-        </div>
-        <div class="footer-links">
-            <a href="#">FAQ & Shipping</a>
-            <a href="#">Contact</a>
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
-        </div>
-        <p style="margin-top: 30px; font-size: 0.8rem; color: var(--text-main);">
-            &copy; 2026 Little Ommani Paperie. All rights reserved.
-        </p>
-    </footer>
+  </main>
+
+  <footer class="site-footer" style="text-align: center; padding: 40px 20px; background-color: var(--lavender);">
+    <div class="shell">
+      <span>© 2026 Little Ommani Paperie</span><br>
+      <span>Made with tiny details and a lot of heart ♡</span>
+    </div>
+  </footer>
+
+  <!-- Snipcart Installation Scripts -->
+  <script async src="https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.js"></script>
+  <div hidden id="snipcart" data-api-key="ZDdkY2VlMTgtOGJmNS00YjMwLTk1ZWEtNTFmNTNlMmE2ZmJjNjM5MTg1MjY1OTMzOTIxMzE5
+"></div>
 
 </body>
 </html>
