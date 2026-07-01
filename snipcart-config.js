@@ -5,7 +5,7 @@
   This key is safe to publish on your website. Never put a Snipcart secret API key here.
 */
 window.SnipcartSettings = {
-  publicApiKey: "PASTE_YOUR_SNIPCART_PUBLIC_API_KEY_HERE",
+  publicApiKey: "ZDgyNDZlNWUtMjFhOC00NmVmLWFjZjYtOGNlZjQyMjVlYmJmNjM5MTg1MjY1OTMzOTIxMzE5",
   currency: "usd",
   modalStyle: "side",
   loadStrategy: "on-user-interaction",
