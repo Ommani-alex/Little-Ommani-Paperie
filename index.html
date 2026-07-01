@@ -70,27 +70,31 @@
     </section>
 
     <!-- Shop / New Arrivals Section -->
+    <!-- Shop / Sticker Sheets Section -->
     <section class="section shop-section" id="shop" aria-labelledby="shop-title">
       <div class="shell">
         <div class="section-heading centered">
-          <h2 id="shop-title">New Arrivals</h2>
+          <h2 id="shop-title">Sticker Sheets</h2>
         </div>
 
         <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
           
           <!-- Product 1: Ghostly Grind Treats -->
           <article class="card">
-            <img src="Ghost_treats.png" alt="Ghostly Grind Treats sticker sheet" class="card-img" style="cursor: pointer;" onclick="openModal('Ghostly Grind Treats', '8.00', 'Ghost_treats.png', 'Sweet little scares for your journal or planner.', 'ghostly-treats-01', 'Seasonal Drop')" />
+            <!-- Image now links to the product page -->
+            <a href="ghostly-grind.html">
+              <img src="Ghost_treats.png" alt="Ghostly Grind Treats sticker sheet" class="card-img" />
+            </a>
             <div class="product-info">
               <p class="tag">Seasonal Drop</p>
-              <h3>Ghostly Grind Treats</h3>
+              <h3><a href="ghostly-grind.html">Ghostly Grind Treats</a></h3>
               <p class="product-price">$8.00</p>
+              <p class="product-specs">7 × 9 in kiss-cut vinyl sticker sheet<br>Original artwork · Ships in 3–7 business days</p>
               
-              <!-- Snipcart Buy Button -->
               <button class="btn snipcart-add-item"
                 data-item-id="ghostly-treats-01"
                 data-item-price="8.00"
-                data-item-url="https://littleommani.com/"
+                data-item-url="https://littleommani.com/index.html"
                 data-item-description="Sweet little scares for your journal or planner."
                 data-item-image="Ghost_treats.png"
                 data-item-name="Ghostly Grind Treats">
@@ -99,36 +103,38 @@
             </div>
           </article>
 
-          <!-- Product 2: Barbie x Dunkin -->
+          <!-- Product 2: Pretty in Pink -->
           <article class="card">
-            <img src="BarbiexDunkin.png" alt="Barbie x Dunkin sticker sheet" class="card-img" style="cursor: pointer;" onclick="openModal('Barbie x Dunkin\'', '8.00', 'BarbiexDunkin.png', 'Vibrant pop culture stickers for your everyday life.', 'barbie-dunkin-01', 'Pop Culture')" />
+            <a href="#">
+              <img src="BarbiexDunkin.png" alt="Pretty in Pink Coffee Run sticker sheet" class="card-img" />
+            </a>
             <div class="product-info">
               <p class="tag">Pop Culture</p>
-              <h3>Barbie x Dunkin'</h3>
+              <h3><a href="#">Pretty in Pink Coffee Run</a></h3>
               <p class="product-price">$8.00</p>
+              <p class="product-specs">7 × 9 in kiss-cut vinyl sticker sheet<br>Original artwork · Ships in 3–7 business days</p>
               
-              <!-- Snipcart Buy Button -->
               <button class="btn snipcart-add-item"
-                data-item-id="barbie-dunkin-01"
+                data-item-id="pretty-pink-01"
                 data-item-price="8.00"
-                data-item-url="https://littleommani.com/"
+                data-item-url="https://littleommani.com/index.html"
                 data-item-description="Vibrant pop culture stickers."
                 data-item-image="BarbiexDunkin.png"
-                data-item-name="Barbie x Dunkin'">
+                data-item-name="Pretty in Pink Coffee Run">
                 Add to cart <span>+</span>
               </button>
             </div>
           </article>
 
-          <!-- Product 3: Ghostly Grind Cafe -->
-          <article class="card">
-            <div class="placeholder-img">Coming Soon!</div>
-            <div class="product-info">
-              <p class="tag">Everyday Cute</p>
-              <h3>Ghostly Grind Café</h3>
-              <p class="product-price">$8.00</p>
-              <button class="btn" disabled>Coming Soon</button>
-            </div>
+          <!-- Product 3: Newsletter Card -->
+          <article class="card newsletter-card" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--soft-pink); border: none; padding: 30px;">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">💌</div>
+            <h3 style="margin-bottom: 10px; line-height: 1.3;">New drops are brewing.</h3>
+            <p style="color: var(--text-main); margin-bottom: 20px; font-size: 0.95rem;">Join the list.</p>
+            <form style="display: flex; flex-direction: column; gap: 10px;">
+                <input type="email" placeholder="Your email address" style="padding: 12px; border-radius: 8px; border: 1px solid var(--white); font-family: 'Nunito', sans-serif; outline: none;" required>
+                <button type="submit" class="btn" style="margin-top: 0; background-color: var(--white);">Subscribe</button>
+            </form>
           </article>
 
         </div>
