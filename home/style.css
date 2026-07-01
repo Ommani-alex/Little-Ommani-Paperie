@@ -128,19 +128,17 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-.hero-image-placeholder {
+/* --- HERO IMAGE --- */
+.hero-img {
     width: 100%;
-    max-width: 800px;
-    height: 400px;
-    background-color: var(--soft-pink);
+    max-width: 900px;
+    height: 450px; /* This makes it a nice horizontal banner shape */
+    object-fit: cover; /* This crops the image nicely without stretching it */
+    object-position: center; /* Focuses on the middle of your photo */
     border-radius: 20px;
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.5rem;
+    margin-top: 40px;
+    box-shadow: var(--shadow-soft);
+    border: 3px solid var(--white); /* Gives it a cute, premium photo border */
 }
 
 /* --- COLLECTIONS SECTION (Pink Grid Background) --- */
