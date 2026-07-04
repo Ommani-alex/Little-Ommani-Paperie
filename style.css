@@ -283,8 +283,8 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .section { padding: 50px 0; }
   .announcement { font-size: .76rem; gap: 7px; }
   .announcement-dot { display: none; }
-  .nav-wrap { grid-template-columns: 1fr auto; min-height: 67px; }
-  .nav-links { display: none; }
+  .nav-wrap { grid-template-columns: 1fr auto; grid-template-rows: auto auto; row-gap: 8px; min-height: auto; padding: 12px 0; }
+  .nav-links { grid-column: 1 / -1; justify-content: center; gap: 20px; font-size: .88rem; }
   .brand { font-size: 1.28rem; }
   .cart-button { font-size: .92rem; }
   .hero { padding-top: 52px; }
