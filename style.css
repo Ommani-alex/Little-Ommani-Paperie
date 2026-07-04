@@ -72,6 +72,125 @@ button { cursor: pointer; }
 .text-link { display: inline-flex; margin: 13px 0 2px; color: var(--plum); font-size: .9rem; font-weight: 900; }
 .product-info .btn { margin-top: 16px; }
 
+.product-type {
+  margin: -0.25rem 0 0.85rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #7c6b73;
+}
+
+.product-moment {
+  margin: 1.25rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid #f4d9df;
+  border-radius: 18px;
+  background: #fff9f7;
+}
+
+.product-moment-label,
+.product-details-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #b26d79;
+}
+
+.product-moment p:last-child {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.product-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.product-highlights span {
+  padding: 0.45rem 0.72rem;
+  border-radius: 999px;
+  background: #f8edf5;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #675766;
+}
+
+.product-details-wrap {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid #f4d9df;
+  border-radius: 18px;
+  background: #fffdfc;
+}
+
+.product-details-wrap .product-details {
+  margin: 0;
+}
+
+.product-story {
+  padding-top: 0;
+}
+
+.story-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  border: 1px solid #f2dfe4;
+  border-radius: 28px;
+  background: #fff8f5;
+}
+
+.story-intro h2 {
+  margin-top: 0.45rem;
+}
+
+.story-intro p:last-child {
+  line-height: 1.65;
+}
+
+.story-list {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.story-list li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.story-list li > span {
+  color: #f18d8a;
+}
+
+.story-list strong,
+.story-list p {
+  margin: 0;
+}
+
+.story-list p {
+  margin-top: 0.2rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 700px) {
+  .story-card {
+    grid-template-columns: 1fr;
+    padding: 1.35rem;
+    gap: 1.25rem;
+  }
+}
+
 .coffee-run-art { position: relative; display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; min-height: 250px; overflow: hidden; padding: 24px 18px; border: 1px solid rgba(255, 199, 210, .48); border-radius: 12px; background: linear-gradient(135deg, #fff7f9, #f9d8e6); color: var(--plum); isolation: isolate; }
 .coffee-run-art::before { content: ''; position: absolute; inset: 0; opacity: .55; background-image: linear-gradient(to right, rgba(255,255,255,.8) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.8) 1px, transparent 1px); background-size: 24px 24px; z-index: -1; }
 .coffee-cup { margin-bottom: 8px; font-size: 4rem; filter: drop-shadow(0 7px 3px rgba(89, 48, 67, .1)); }
