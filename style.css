@@ -256,7 +256,8 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
 .product-add { max-width: 440px; }
 .product-note { margin-top: 13px; color: var(--text-light); font-size: .82rem; }
 .related-section { padding-top: 16px; background: var(--white); }
-.related-card { display: grid; grid-template-columns: 220px 1fr; gap: 25px; max-width: 670px; margin: 0 auto; padding: 16px; border: 1px solid rgba(255, 199, 210, .38); border-radius: 17px; background: var(--cream); box-shadow: var(--shadow-soft); }
+.related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+.related-card { display: grid; grid-template-columns: 220px 1fr; gap: 25px; padding: 16px; border: 1px solid rgba(255, 199, 210, .38); border-radius: 17px; background: var(--cream); box-shadow: var(--shadow-soft); }
 .related-card .coffee-run-art { min-height: 180px; }
 .coffee-run-art.small .coffee-cup { font-size: 3.3rem; }
 .related-card h3 { margin-bottom: 8px; font-size: 1.25rem; }
@@ -277,14 +278,15 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .product-layout, .collection-note-wrap { grid-template-columns: 1fr; }
   .gallery { max-width: 650px; }
   .product-summary { padding-top: 0; }
+  .related-grid { grid-template-columns: 1fr; max-width: 500px; }
 }
 
 @media (max-width: 640px) {
   .section { padding: 50px 0; }
   .announcement { font-size: .76rem; gap: 7px; }
   .announcement-dot { display: none; }
-  .nav-wrap { grid-template-columns: 1fr auto; min-height: 67px; }
-  .nav-links { display: none; }
+  .nav-wrap { grid-template-columns: 1fr auto; grid-template-rows: auto auto; row-gap: 8px; min-height: auto; padding: 12px 0; }
+  .nav-links { grid-column: 1 / -1; justify-content: center; gap: 20px; font-size: .88rem; }
   .brand { font-size: 1.28rem; }
   .cart-button { font-size: .92rem; }
   .hero { padding-top: 52px; }
@@ -303,6 +305,7 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .coffee-run-art.large { min-height: 320px; }
 }
 .newsletter-embed {
+  grid-column: 1 / -1;
   width: 100%;
   min-width: 0;
 }
