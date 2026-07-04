@@ -303,6 +303,7 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .coffee-run-art.large { min-height: 320px; }
 }
 .newsletter-embed {
+  grid-column: 1 / -1;
   width: 100%;
   min-width: 0;
 }
