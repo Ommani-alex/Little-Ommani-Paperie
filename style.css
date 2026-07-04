@@ -243,7 +243,7 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
 .breadcrumbs a:hover { color: var(--orange-pop); }
 .product-layout { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); gap: clamp(36px, 7vw, 84px); align-items: start; }
 .gallery-main { overflow: hidden; border: 1px solid rgba(255, 199, 210, .5); border-radius: 18px; background: var(--white); box-shadow: var(--shadow-soft); }
-.gallery-main img { display: block; width: 100%; aspect-ratio: 5 / 6.4; object-fit: cover; }
+.gallery-main img { display: block; width: 100%; height: auto; }
 .gallery-caption { margin: 12px 0 0; color: var(--text-light); font-size: .82rem; line-height: 1.45; text-align: center; }
 .product-summary { padding-top: 16px; }
 .product-summary h1 { max-width: 520px; margin-bottom: 12px; font-size: clamp(2rem, 4.2vw, 3.3rem); letter-spacing: -.045em; }
@@ -298,7 +298,6 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .about-wrap { grid-template-columns: 1fr; text-align: center; }
   .about-star { margin: 0 auto; }
   .product-page { padding-top: 30px; }
-  .gallery-main img { aspect-ratio: 5 / 6.2; }
   .related-card { grid-template-columns: 1fr; }
   .related-card .coffee-run-art { min-height: 220px; }
   .collection-note-section { min-height: auto; }
