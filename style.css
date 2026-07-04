@@ -302,3 +302,11 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .collection-note-section { min-height: auto; }
   .coffee-run-art.large { min-height: 320px; }
 }
+.newsletter-embed {
+  width: 100%;
+  min-width: 0;
+}
+
+.newsletter-embed .ml-embedded {
+  width: 100%;
+}
