@@ -10,6 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+<!-- MailerLite Universal -->
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2484475');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 <body>
   <a class="skip-link" href="#shop">Skip to sticker sheets</a>
@@ -102,17 +112,8 @@
             </div>
           </article>
 
-          <aside class="card newsletter-card" aria-labelledby="newsletter-title">
-            <div class="newsletter-icon" aria-hidden="true">💌</div>
-            <p class="tag">DROP ALERTS</p>
-            <h3 id="newsletter-title">New drops are brewing.</h3>
-            <p>Join the list for fresh sticker sheets, restocks, and little shop updates.</p>
-            <form class="newsletter-form" id="newsletter-form">
-              <label class="sr-only" for="newsletter-email">Email address</label>
-              <input id="newsletter-email" type="email" placeholder="Your email address" autocomplete="email" required />
-              <button type="submit" class="btn btn-white">Join the list</button>
-              <p class="newsletter-note" id="newsletter-note" aria-live="polite">Join the list for upcoming sticker drops, restocks, and little shop updates.</p>
-            </form>
+          <aside class="newsletter-embed" aria-label="Join the Little Ommani email list">
+            <div class="ml-embedded" data-form="QcARmi"></div>
           </aside>
         </div>
       </div>
