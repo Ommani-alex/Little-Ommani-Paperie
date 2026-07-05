@@ -9,7 +9,7 @@ window.SnipcartSettings = {
   currency: "usd",
   modalStyle: "side",
   loadStrategy: "on-user-interaction",
-  version: "3.3.3"
+  version: "3.9.0"
 };
 
 /* Official Snipcart loader pattern, kept here so the key only lives in one file. */
