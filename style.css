@@ -60,6 +60,16 @@ button { cursor: pointer; }
 .section-heading h2 { font-size: clamp(1.45rem, 3vw, 2rem); }
 .centered { margin-left: auto; margin-right: auto; }
 .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: stretch; }
+
+.shop-tab-input { position: absolute; opacity: 0; pointer-events: none; }
+.shop-tab-buttons { display: flex; justify-content: center; gap: 12px; margin-bottom: 34px; }
+.shop-tab-btn { padding: 10px 24px; border: 1px solid rgba(255, 189, 202, .55); border-radius: 999px; background: var(--white); color: var(--text-light); font-family: 'Quicksand', sans-serif; font-weight: 700; cursor: pointer; transition: background .2s ease, color .2s ease; }
+.shop-tab-panel { display: none; }
+#tab-sheets:checked ~ .shop-tab-panel#panel-sheets { display: block; }
+#tab-die-cuts:checked ~ .shop-tab-panel#panel-die-cuts { display: block; }
+#tab-sheets:checked ~ .shop-tab-buttons label[for="tab-sheets"],
+#tab-die-cuts:checked ~ .shop-tab-buttons label[for="tab-die-cuts"] { background: var(--peach); color: var(--text-main); }
+.shop-tab-btn:focus-visible { outline: 2px solid var(--dark-lavender); outline-offset: 2px; }
 .card { display: flex; flex-direction: column; overflow: hidden; padding: 20px; border: 1px solid rgba(255, 199, 210, .38); border-radius: 17px; background: var(--white); box-shadow: var(--shadow-soft); text-align: center; transition: transform .22s ease, box-shadow .22s ease; }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
 .product-image-link { display: block; }
@@ -305,9 +315,9 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .coffee-run-art.large { min-height: 320px; }
 }
 .newsletter-embed {
-  grid-column: 1 / -1;
   width: 100%;
   min-width: 0;
+  margin-top: 40px;
 }
 
 .newsletter-embed .ml-embedded {
