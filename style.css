@@ -267,6 +267,7 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
 .product-note { margin-top: 13px; color: var(--text-light); font-size: .82rem; }
 .related-section { padding-top: 16px; background: var(--white); }
 .related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+.related-grid.single { grid-template-columns: minmax(0, 1fr); max-width: 450px; }
 .related-card { display: grid; grid-template-columns: 220px 1fr; gap: 25px; padding: 16px; border: 1px solid rgba(255, 199, 210, .38); border-radius: 17px; background: var(--cream); box-shadow: var(--shadow-soft); }
 .related-card .coffee-run-art { min-height: 180px; }
 .coffee-run-art.small .coffee-cup { font-size: 3.3rem; }
