@@ -232,7 +232,21 @@ summary::after { content: '+'; color: var(--orange-pop); font-size: 1.4rem; }
 details[open] summary::after { content: '−'; }
 details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--soft-pink); color: var(--text-light); }
 .site-footer { padding: 39px 0; background: var(--lavender); text-align: center; }
-.site-footer .shell { display: grid; gap: 2px; color: var(--plum); font-size: .95rem; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; margin-bottom: 16px; font-weight: 800; font-size: .88rem; color: var(--plum); }
+.footer-links a:hover, .footer-links a:focus-visible { color: var(--orange-deep); }
+.footer-meta { display: grid; gap: 2px; color: var(--plum); font-size: .95rem; }
+
+.cart-progress { display: none; border-top: 1px solid rgba(255, 180, 193, .3); padding: 9px 16px; text-align: center; font-size: .82rem; font-weight: 800; color: var(--plum); background: var(--cream); }
+.cart-progress:not([hidden]) { display: block; }
+
+.policy-page { padding-top: 46px; padding-bottom: 20px; }
+.policy-shell { max-width: 720px; }
+.policy-shell h1 { margin: 18px 0 22px; font-size: clamp(2rem, 4vw, 2.6rem); letter-spacing: -.03em; }
+.policy-shell h2 { margin: 32px 0 12px; font-size: 1.3rem; }
+.policy-shell p, .policy-shell li { color: var(--text-light); margin-bottom: 14px; line-height: 1.7; }
+.policy-shell ul, .policy-shell ol { padding-left: 22px; margin-bottom: 14px; }
+.policy-shell a { color: var(--plum); font-weight: 800; text-decoration: underline; }
+.policy-updated { color: var(--text-light); font-size: .85rem; }
 
 /* Product page */
 .product-page { padding-top: 46px; }
