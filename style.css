@@ -89,9 +89,24 @@ button { cursor: pointer; }
   color: #7c6b73;
 }
 
-.product-moment {
-  margin: 1.25rem 0;
-  padding: 1rem 1.1rem;
+.finish-buttons {
+  display: flex;
+  gap: 10px;
+  max-width: 440px;
+  margin-bottom: 2px;
+}
+
+.finish-buttons .btn {
+  width: auto;
+  flex: 1;
+  min-width: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.product-info-card {
+  margin: 1.35rem 0 1rem;
+  padding: 1.1rem 1.2rem;
   border: 1px solid #f4d9df;
   border-radius: 18px;
   background: #fff9f7;
@@ -107,37 +122,27 @@ button { cursor: pointer; }
   color: #b26d79;
 }
 
-.product-moment p:last-child {
+.product-moment-text {
   margin: 0;
   line-height: 1.55;
 }
 
-.product-highlights {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin: 1rem 0 1.25rem;
+.card-divider {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px dashed #f0c9d2;
 }
 
-.product-highlights span {
-  padding: 0.45rem 0.72rem;
-  border-radius: 999px;
-  background: #f8edf5;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #675766;
+.product-info-card .product-details-title {
+  margin-top: 0;
 }
 
-.product-details-wrap {
-  margin-top: 1rem;
-  padding: 1rem 1.1rem;
-  border: 1px solid #f4d9df;
-  border-radius: 18px;
-  background: #fffdfc;
-}
-
-.product-details-wrap .product-details {
+.product-info-card .product-details {
   margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .product-story {
@@ -329,6 +334,8 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .related-card .coffee-run-art { min-height: 220px; }
   .collection-note-section { min-height: auto; }
   .coffee-run-art.large { min-height: 320px; }
+  .finish-buttons { flex-direction: column; max-width: 100%; }
+  .finish-buttons .btn { width: 100%; }
 }
 .newsletter-embed {
   width: 100%;
