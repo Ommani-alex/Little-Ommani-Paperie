@@ -10,13 +10,29 @@
   var SHEET_CATEGORY = 'Sticker Sheets';
   var SHEET_GOAL = 4;
   var FREE_SHIPPING_THRESHOLD = 35;
+  var loggedShape = false;
 
   function formatMoney(amount) {
     return '$' + amount.toFixed(2);
   }
 
+  // Snipcart's cart object shape has varied across integration examples
+  // (a plain array vs. a { count, items } wrapper), so accept either
+  // instead of assuming one and silently rendering nothing.
+  function getItems(cart) {
+    if (!cart || !cart.items) return [];
+    if (Array.isArray(cart.items)) return cart.items;
+    if (Array.isArray(cart.items.items)) return cart.items.items;
+    return [];
+  }
+
   function render(cart) {
-    var items = (cart && cart.items && cart.items.items) || [];
+    if (!loggedShape) {
+      loggedShape = true;
+      console.log('[cart-progress] raw cart object from Snipcart:', cart);
+    }
+
+    var items = getItems(cart);
 
     if (!items.length) {
       el.hidden = true;
@@ -26,13 +42,17 @@
 
     var sheetCount = 0;
     items.forEach(function (item) {
-      var categories = item.categories || [];
+      var categories = item.categories || item.categoryNames || [];
       if (categories.indexOf(SHEET_CATEGORY) !== -1) {
         sheetCount += item.quantity || 0;
       }
     });
 
-    var subtotal = typeof cart.subtotal === 'number' ? cart.subtotal : (cart.total || 0);
+    var subtotal = typeof cart.subtotal === 'number' ? cart.subtotal
+      : typeof cart.total === 'number' ? cart.total
+      : typeof cart.grandTotal === 'number' ? cart.grandTotal
+      : 0;
+
     var parts = [];
 
     if (sheetCount > 0 && sheetCount < SHEET_GOAL) {
