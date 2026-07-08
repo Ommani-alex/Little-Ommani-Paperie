@@ -10,7 +10,7 @@
   var SHEET_CATEGORY = 'Sticker Sheets';
   var SHEET_GOAL = 4;
   var FREE_SHIPPING_THRESHOLD = 35;
-  var loggedShape = false;
+  var renderCount = 0;
 
   function formatMoney(amount) {
     return '$' + amount.toFixed(2);
@@ -27,16 +27,14 @@
   }
 
   function render(cart) {
-    if (!loggedShape) {
-      loggedShape = true;
-      console.log('[cart-progress] raw cart object from Snipcart:', cart);
-    }
-
+    renderCount += 1;
     var items = getItems(cart);
+    console.log('[cart-progress] render #' + renderCount + ' — item count:', items.length, '— cart:', cart);
 
     if (!items.length) {
       el.hidden = true;
       el.textContent = '';
+      console.log('[cart-progress] render #' + renderCount + ' — hiding widget (no items detected)');
       return;
     }
 
@@ -70,12 +68,18 @@
 
     el.hidden = false;
     el.textContent = parts.join(' · ');
+    console.log('[cart-progress] render #' + renderCount + ' — showing widget:', el.textContent);
   }
 
   document.addEventListener('snipcart.ready', function () {
+    console.log('[cart-progress] snipcart.ready fired');
     if (window.Snipcart && Snipcart.store) {
       render(Snipcart.store.getState().cart);
     }
+    // 'cart.ready' fires once Snipcart has finished loading the persisted
+    // cart (the initial store snapshot above can be read before that
+    // finishes); 'cart.updated' fires on every later change.
+    Snipcart.events.on('cart.ready', render);
     Snipcart.events.on('cart.updated', render);
   });
 })();
