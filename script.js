@@ -73,12 +73,35 @@
 
   document.addEventListener('snipcart.ready', function () {
     console.log('[cart-progress] snipcart.ready fired');
-    if (window.Snipcart && Snipcart.store) {
-      render(Snipcart.store.getState().cart);
+
+    function readCurrentCart() {
+      if (window.Snipcart && Snipcart.store) {
+        render(Snipcart.store.getState().cart);
+      }
     }
-    // 'cart.ready' fires once Snipcart has finished loading the persisted
-    // cart (the initial store snapshot above can be read before that
-    // finishes); 'cart.updated' fires on every later change.
+
+    readCurrentCart();
+
+    // A persisted cart can still be loading into Snipcart's store right
+    // after 'snipcart.ready' fires, and by the time our event listeners
+    // below are attached, Snipcart may have already finished doing that
+    // without us catching the moment - so poll a few times as a safety
+    // net instead of relying on catching one specific event in time.
+    var pollCount = 0;
+    var pollId = setInterval(function () {
+      pollCount += 1;
+      readCurrentCart();
+      if (pollCount >= 6) clearInterval(pollId);
+    }, 500);
+
+    // Also subscribe directly to Snipcart's store, which should notify on
+    // every state change (cart hydration, item added/removed, etc.) - more
+    // reliable than depending on specific named events firing after we
+    // start listening.
+    if (window.Snipcart && Snipcart.store && typeof Snipcart.store.subscribe === 'function') {
+      Snipcart.store.subscribe(readCurrentCart);
+    }
+
     Snipcart.events.on('cart.ready', render);
     Snipcart.events.on('cart.updated', render);
   });
