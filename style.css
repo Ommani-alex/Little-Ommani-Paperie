@@ -314,8 +314,8 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .section { padding: 36px 0; }
   .announcement { font-size: .76rem; gap: 7px; }
   .announcement-dot { display: none; }
-  .nav-wrap { grid-template-columns: 1fr auto; grid-template-rows: auto auto; row-gap: 8px; min-height: auto; padding: 12px 0; }
-  .nav-links { grid-column: 1 / -1; justify-content: center; gap: 20px; font-size: .88rem; }
+  .nav-wrap { grid-template-columns: 1fr auto; grid-template-rows: auto auto; row-gap: 6px; min-height: auto; padding: 9px 0; }
+  .nav-links { grid-column: 1 / -1; justify-content: center; gap: 16px; font-size: .88rem; }
   .brand { font-size: 1.28rem; }
   .cart-button { font-size: .92rem; }
   .hero { padding-top: 36px; }
@@ -328,7 +328,7 @@ details p { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--so
   .card-img { height: 315px; min-height: 315px; }
   .about-wrap { grid-template-columns: 1fr; text-align: center; }
   .about-star { margin: 0 auto 6px; }
-  .about-wrap p { margin-left: auto; margin-right: auto; }
+  .about-wrap p { max-width: none; margin: 0 0 12px; padding: 14px 16px; text-align: left; background: var(--cream); border: 1px solid rgba(255, 199, 210, .38); border-radius: 17px; }
   .about-values { grid-template-columns: 1fr; }
   .product-page { padding-top: 30px; }
   .related-card { grid-template-columns: 1fr; }
