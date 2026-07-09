@@ -46,9 +46,10 @@
       }
     });
 
+    // cart.total / cart.grandTotal include shipping, which must never count
+    // toward the free-shipping threshold - only read merchandise subtotal.
     var subtotal = typeof cart.subtotal === 'number' ? cart.subtotal
-      : typeof cart.total === 'number' ? cart.total
-      : typeof cart.grandTotal === 'number' ? cart.grandTotal
+      : (cart.items && typeof cart.items.subtotal === 'number') ? cart.items.subtotal
       : 0;
 
     var parts = [];
