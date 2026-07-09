@@ -106,3 +106,84 @@
     Snipcart.events.on('cart.updated', render);
   });
 })();
+
+// GA4 ecommerce events. view_item fires immediately from the small
+// window.gaItem data block each product page defines. The rest hook into
+// Snipcart's events, same pattern as the cart-progress widget above.
+(function () {
+  function gtagReady() {
+    return typeof window.gtag === 'function';
+  }
+
+  function toGaItem(item) {
+    var categories = item.categories || item.categoryNames || [];
+    return {
+      item_id: item.id || item.uniqueId,
+      item_name: item.name,
+      price: item.price,
+      quantity: item.quantity || 1,
+      item_category: categories[0] || undefined
+    };
+  }
+
+  // Same defensive shape-handling as the cart-progress widget - Snipcart's
+  // item list has shown up as both a plain array and a {count, items}
+  // wrapper depending on context.
+  function getItems(source) {
+    if (!source || !source.items) return [];
+    if (Array.isArray(source.items)) return source.items;
+    if (Array.isArray(source.items.items)) return source.items.items;
+    return [];
+  }
+
+  if (window.gaItem && gtagReady()) {
+    gtag('event', 'view_item', {
+      currency: 'USD',
+      value: window.gaItem.price,
+      items: [window.gaItem]
+    });
+  }
+
+  document.addEventListener('snipcart.ready', function () {
+    if (!gtagReady()) return;
+
+    Snipcart.events.on('item.added', function (item) {
+      var gaItem = toGaItem(item);
+      console.log('[ga4-ecommerce] add_to_cart:', gaItem, '— raw item:', item);
+      gtag('event', 'add_to_cart', {
+        currency: 'USD',
+        value: (item.price || 0) * (item.quantity || 1),
+        items: [gaItem]
+      });
+    });
+
+    // Snipcart's public API doesn't expose a distinct "checkout step
+    // started" event, so this uses 'cart.opened' as the closest available
+    // proxy - it fires when the cart drawer opens, not specifically when
+    // the Checkout button inside it is clicked. Treat begin_checkout data
+    // as "engaged with cart," not a precise checkout-step funnel.
+    Snipcart.events.on('cart.opened', function (cart) {
+      var items = getItems(cart);
+      if (!items.length) return;
+      var subtotal = typeof cart.subtotal === 'number' ? cart.subtotal : (cart.total || 0);
+      console.log('[ga4-ecommerce] begin_checkout (cart opened):', items);
+      gtag('event', 'begin_checkout', {
+        currency: 'USD',
+        value: subtotal,
+        items: items.map(toGaItem)
+      });
+    });
+
+    Snipcart.events.on('cart.confirmed', function (order) {
+      console.log('[ga4-ecommerce] raw order object from Snipcart on cart.confirmed:', order);
+      var items = getItems(order);
+      gtag('event', 'purchase', {
+        transaction_id: order.invoiceNumber || order.token || String(Date.now()),
+        currency: order.currency || 'USD',
+        value: order.total,
+        items: items.map(toGaItem)
+      });
+      console.log('[ga4-ecommerce] purchase event sent for transaction:', order.invoiceNumber || order.token);
+    });
+  });
+})();
